@@ -126,13 +126,31 @@
   margin-bottom: 8px;
 }
 
+.contact-form-card .input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.contact-form-card .input-wrap i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
 .contact-form-card input,
 .contact-form-card select,
 .contact-form-card textarea {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
   background: var(--bg-light);
   border: 1px solid rgba(15, 52, 33, 0.08);
+  border-radius: var(--radius-md);
   color: var(--text-primary);
-  padding-left: 44px;
+  outline: none;
+  transition: var(--transition-smooth);
 }
 
 .contact-form-card textarea {
@@ -145,10 +163,6 @@
   background: white;
   border-color: var(--accent);
   box-shadow: 0 0 10px rgba(106, 176, 35, 0.1);
-}
-
-.contact-form-card .input-wrap i {
-  color: var(--text-muted);
 }
 
 /* Success form overlay card */
