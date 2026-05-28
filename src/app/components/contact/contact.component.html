@@ -5,9 +5,9 @@
       <!-- Contact Info Side -->
       <div class="contact-info-side">
         <span class="badge">Kontakt aufnehmen</span>
-        <h2>Wir freuen uns auf das Gespr├ñch mit Ihnen</h2>
+        <h2>Wir freuen uns auf das Gespräch mit Ihnen</h2>
         <p class="contact-desc-para">
-          Haben Sie Fragen zu unseren Agrarversicherungen, m├Âchten Sie einen Schaden melden oder eine pers├Ânliche Beratung vereinbaren? Schreiben Sie uns oder rufen Sie uns direkt an!
+          Haben Sie Fragen zu unseren Agrarversicherungen, möchten Sie einen Schaden melden oder eine persönliche Beratung vereinbaren? Schreiben Sie uns oder rufen Sie uns direkt an!
         </p>
 
         <div class="contact-methods">
@@ -24,7 +24,7 @@
             <i class="fa-solid fa-envelope"></i>
             <div>
               <h4>E-Mail-Kontakt</h4>
-              <p>F├╝r allgemeine Anfragen:</p>
+              <p>Für allgemeine Anfragen:</p>
               <a href="mailto:info@mrvv-deutschland.de">info@mrvv-deutschland.de</a>
             </div>
           </div>
@@ -36,14 +36,14 @@
             <i class="fa-solid fa-award"></i>
             <div>
               <h5>IHK Ausgezeichnet</h5>
-              <p>Qualit├ñt durch qualifizierte Ausbildung</p>
+              <p>Qualität durch qualifizierte Ausbildung</p>
             </div>
           </div>
           <div class="cert-item">
             <i class="fa-solid fa-gavel"></i>
             <div>
               <h5>Haftungssicherheit</h5>
-              <p>Kanzlei Michaelis gepr├╝ftes Siegel</p>
+              <p>Kanzlei Michaelis geprüftes Siegel</p>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
       <div class="contact-form-side">
         <div class="glass-card contact-form-card">
           @if (!formSubmitted()) {
-            <h3>Nachricht oder R├╝ckrufwunsch senden</h3>
+            <h3>Nachricht oder Rückrufwunsch senden</h3>
             <form (submit)="submitContactForm($event)">
               <div class="form-group">
                 <label for="name">Ihr Name *</label>
@@ -72,7 +72,7 @@
               </div>
 
               <div class="form-group">
-                <label for="phone">Telefonnummer (f├╝r R├╝ckruf)</label>
+                <label for="phone">Telefonnummer (für Rückruf)</label>
                 <div class="input-wrap">
                   <i class="fa-solid fa-phone"></i>
                   <input type="tel" id="phone" [(ngModel)]="contactPhone" name="contactPhone" placeholder="Z. B. +49 170 1234567">
@@ -88,8 +88,8 @@
                     <option value="Betriebscheck Beratung">Beratung zum Betriebscheck</option>
                     <option value="Erntehelfer">Erntehelfer-Versicherung</option>
                     <option value="Schadenmeldung">Schaden melden</option>
-                    <option value="Wismar">Gesch├ñftsstelle Wismar</option>
-                    <option value="Nienborstel">Gesch├ñftsstelle Nienborstel</option>
+                    <option value="Wismar">Geschäftsstelle Wismar</option>
+                    <option value="Nienborstel">Geschäftsstelle Nienborstel</option>
                   </select>
                 </div>
               </div>
@@ -97,7 +97,7 @@
               <div class="form-group">
                 <label for="message">Ihre Nachricht</label>
                 <div class="input-wrap">
-                  <textarea id="message" rows="4" [(ngModel)]="contactMessage" name="contactMessage" placeholder="Wie k├Ânnen wir Ihnen helfen?"></textarea>
+                  <textarea id="message" rows="4" [(ngModel)]="contactMessage" name="contactMessage" placeholder="Wie können wir Ihnen helfen?"></textarea>
                 </div>
               </div>
 
@@ -110,10 +110,10 @@
               <div class="success-checkbox">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
-              <h3>Vielen Dank f├╝r Ihre Anfrage!</h3>
+              <h3>Vielen Dank für Ihre Anfrage!</h3>
               <p>Sehr geehrte/r <strong>{{ contactName() }}</strong>,</p>
               <p>Ihre Nachricht zum Thema <strong>{{ contactTopic }}</strong> wurde erfolgreich an unser Beratungsteam übermittelt.</p>
-              <p>Wir werden uns innerhalb der n├ñchsten 24 Stunden pers├Ânlich bei Ihnen unter der E-Mail <strong>{{ contactEmail() }}</strong> melden.</p>
+              <p>Wir werden uns innerhalb der nächsten 24 Stunden persönlich bei Ihnen unter der E-Mail <strong>{{ contactEmail() }}</strong> melden.</p>
               <div class="success-loader"></div>
             </div>
           }

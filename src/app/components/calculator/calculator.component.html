@@ -5,7 +5,7 @@
       <span class="badge" style="background-color: rgba(106,176,35,0.25); color: #fff; border-color: rgba(255,255,255,0.2)">Risiko-Check</span>
       <h2 style="color: #fff;">Der digitale MRVV Betriebscheck</h2>
       <p class="section-desc" style="color: #cbd5e1;">
-        Ermitteln Sie in nur 3 Schritten Ihren individuellen Versicherungsbedarf. Erhalten Sie eine ma├ƒgeschneiderte Sofortanalyse f├╝r Ihren landwirtschaftlichen Betrieb.
+        Ermitteln Sie in nur 3 Schritten Ihren individuellen Versicherungsbedarf. Erhalten Sie eine maßgeschneiderte Sofortanalyse für Ihren landwirtschaftlichen Betrieb.
       </p>
     </div>
 
@@ -47,7 +47,7 @@
           </div>
 
           <div class="range-slider-wrap">
-            <label>Bewirtschaftete Fl├ñche: <strong>{{ farmSize() }} Hektar (ha)</strong></label>
+            <label>Bewirtschaftete Fläche: <strong>{{ farmSize() }} Hektar (ha)</strong></label>
             <input type="range" min="1" max="1000" [value]="farmSize()" (input)="farmSize.set(+$any($event.target).value)" class="quiz-range-slider">
             <div class="range-labels">
               <span>1 ha</span>
@@ -71,7 +71,7 @@
       @if (quizStep() === 2) {
         <div class="step-layout animate-fade-in-up">
           <h3>Schritt 2: Ausstattung & Personal</h3>
-          <p class="step-desc">Bitte w├ñhlen Sie aus, welche Ausstattung und Personalstrukturen auf Ihrem Betrieb vorhanden sind:</p>
+          <p class="step-desc">Bitte wählen Sie aus, welche Ausstattung und Personalstrukturen auf Ihrem Betrieb vorhanden sind:</p>
 
           <div class="toggles-list">
             <!-- Toggle Item 1 -->
@@ -80,7 +80,7 @@
                 <i class="fa-solid fa-tractor"></i>
                 <div>
                   <h4>Eigener/Geleaster Maschinenpark</h4>
-                  <p>Traktoren, M├ñhdrescher, Pfl├╝ge, H├ñnger vorhanden</p>
+                  <p>Traktoren, Mähdrescher, Pflüge, Hänger vorhanden</p>
                 </div>
               </div>
               <div class="toggle-switch">
@@ -94,7 +94,7 @@
                 <i class="fa-solid fa-solar-panel"></i>
                 <div>
                   <h4>Photovoltaikanlage</h4>
-                  <p>Solar-Anlage auf D├ñchern von St├ñllen/Hallen</p>
+                  <p>Solar-Anlage auf Dächern von Ställen/Hallen</p>
                 </div>
               </div>
               <div class="toggle-switch">
@@ -108,7 +108,7 @@
                 <i class="fa-solid fa-user-tie"></i>
                 <div>
                   <h4>Festangestellte Mitarbeiter</h4>
-                  <p>Ganzj├ñhrig besch├ñftigte Arbeitnehmer</p>
+                  <p>Ganzjährig beschäftigte Arbeitnehmer</p>
                 </div>
               </div>
               <div class="toggle-switch">
@@ -122,7 +122,7 @@
                 <i class="fa-solid fa-users"></i>
                 <div>
                   <h4>Saisonale Erntehelfer</h4>
-                  <p>Erntekr├ñfte aus dem Ausland (z.B. Erntehelfer)</p>
+                  <p>Erntekräfte aus dem Ausland (z.B. Erntehelfer)</p>
                 </div>
               </div>
               <div class="toggle-switch">
@@ -133,7 +133,7 @@
 
           <div class="quiz-footer-actions">
             <button class="btn btn-outline" (click)="prevQuizStep()" style="border-color: rgba(255,255,255,0.4); color:#fff;">
-              <i class="fa-solid fa-arrow-left"></i> Zur├╝ck
+              <i class="fa-solid fa-arrow-left"></i> Zurück
             </button>
             <button class="btn btn-primary" (click)="nextQuizStep()">
               Weiter <i class="fa-solid fa-arrow-right"></i>
@@ -145,7 +145,7 @@
       <!-- Step 3: Callback/Contact info -->
       @if (quizStep() === 3) {
         <div class="step-layout animate-fade-in-up">
-          <h3>Schritt 3: Wohin d├╝rfen wir Ihre Kurzanalyse senden?</h3>
+          <h3>Schritt 3: Wohin dürfen wir Ihre Kurzanalyse senden?</h3>
           <p class="step-desc">Geben Sie kurz Ihre Kontaktdaten ein, um direkt zu Ihrem individuellen Ergebnis zu gelangen.</p>
           
           <div class="quiz-form">
@@ -169,7 +169,7 @@
 
           <div class="quiz-footer-actions">
             <button class="btn btn-outline" (click)="prevQuizStep()" style="border-color: rgba(255,255,255,0.4); color:#fff;">
-              <i class="fa-solid fa-arrow-left"></i> Zur├╝ck
+              <i class="fa-solid fa-arrow-left"></i> Zurück
             </button>
             <button class="btn btn-primary" (click)="nextQuizStep()" [disabled]="!contactName() || !contactEmail()">
               Ergebnis berechnen <i class="fa-solid fa-chart-line"></i>
@@ -183,7 +183,7 @@
         <div class="step-layout animate-fade-in-up results-step">
           <div class="results-header">
             <div class="success-icon-badge"><i class="fa-solid fa-square-poll-vertical"></i></div>
-            <h3>Ihre pers├Ânliche Risikoanalyse</h3>
+            <h3>Ihre persönliche Risikoanalyse</h3>
             <p>Sehr geehrte/r {{ contactName() }}, basierend auf Ihren Angaben ({{ farmSize() }} ha {{ farmType() }}) haben unsere Spezialisten folgende Absicherungsempfehlung berechnet:</p>
           </div>
 
@@ -206,7 +206,7 @@
 
           <div class="results-action-box">
             <h4>Bedarfscheck per E-Mail erhalten?</h4>
-            <p>Wir haben eine detaillierte Zusammenfassung inklusive konkreter Beispiellayouts und Tarifs├ñtze an <strong>{{ contactEmail() }}</strong> gesendet.</p>
+            <p>Wir haben eine detaillierte Zusammenfassung inklusive konkreter Beispiellayouts und Tarifsätze an <strong>{{ contactEmail() }}</strong> gesendet.</p>
             
             <div class="results-buttons">
               <button class="btn btn-primary" (click)="resetQuiz()">
