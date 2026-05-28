@@ -1,0 +1,204 @@
+/* --- HERO SECTION --- */
+.hero-section {
+  position: relative;
+  padding: 180px 0 140px 0;
+  background-image: url('/hero_background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(9, 33, 21, 0.92) 0%, rgba(15, 52, 33, 0.65) 50%, rgba(9, 33, 21, 0.95) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+.hero-content .badge {
+  background-color: rgba(106, 176, 35, 0.25);
+  color: #ffffff;
+  border-color: rgba(106, 176, 35, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content .badge i {
+  color: var(--accent);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.hero-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+.bullet-item i {
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
+/* Overlapping Stats Card */
+.hero-stats-card {
+  position: absolute;
+  bottom: -200px;
+  left: 24px;
+  right: 24px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(15, 52, 33, 0.15);
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-item h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  background: rgba(15, 52, 33, 0.1);
+  height: 50px;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.4rem; }
+  .hero-section { padding-top: 140px; padding-bottom: 220px; }
+  .hero-stats-card {
+    flex-direction: column;
+    gap: 24px;
+    bottom: -260px;
+  }
+  .stat-divider { display: none; }
+}
+
+
+/* --- SOLIDARITY BANNER --- */
+.solidarity-banner {
+  background-color: var(--primary);
+  color: white;
+  padding: 120px 0 50px 0; /* Padding offsets overlapping stats card */
+  border-bottom: 2px solid rgba(106, 176, 35, 0.1);
+}
+
+.solidarity-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(106, 176, 35, 0.1);
+  border: 1px solid rgba(106, 176, 35, 0.2);
+  padding: 30px;
+  border-radius: var(--radius-md);
+}
+
+.solidarity-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+.solidarity-text h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.solidarity-text p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(106, 176, 35, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(106, 176, 35, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(106, 176, 35, 0); }
+}
+
+@media (max-width: 768px) {
+  .solidarity-banner { padding-top: 280px; }
+  .solidarity-container { flex-direction: column; text-align: center; }
+}
+
+

@@ -1,0 +1,79 @@
+<!-- Career Opportunities / Jobs Section -->
+<section id="career" class="section-padding career-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="badge">Karriere bei der MRVV</span>
+      <h2>Gestalten Sie die gr├╝ne Zukunft mit</h2>
+      <p class="section-desc">
+        Wir sind ein dynamisch wachsendes Team und immer auf der Suche nach engagierten Talenten. Werden Sie Teil unseres Netzwerks aus Landwirtschafts- und Versicherungsexperten!
+      </p>
+    </div>
+
+    <!-- Jobs Grid -->
+    <div class="grid-2 jobs-grid">
+      @for (job of jobs; track job.title) {
+        <div class="glass-card job-card" (click)="openJobDetails(job)">
+          <div class="job-meta">
+            <span class="job-location"><i class="fa-solid fa-map-pin"></i> {{ job.location }}</span>
+            <span class="job-type"><i class="fa-solid fa-clock"></i> {{ job.type }}</span>
+          </div>
+          <h3>{{ job.title }}</h3>
+          <p>{{ job.desc.substring(0, 120) }}...</p>
+          <span class="job-action-btn">Stellenanzeige ansehen <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      }
+    </div>
+
+    <!-- Career Graphic Panel -->
+    <div class="career-graphic-panel glass-card-dark">
+      <div class="career-graphic-overlay"></div>
+      <div class="career-graphic-content">
+        <h3>Keine passende Stelle dabei?</h3>
+        <p>Wir freuen uns jederzeit ├╝ber aussagekr├ñftige Initiativbewerbungen von motivierten Versicherungsspezialisten und Quereinsteigern aus der Agrarbranche.</p>
+        <a href="mailto:info@mrvv-deutschland.de" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Initiativ bewerben</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selected Job Detail Modal popup -->
+@if (selectedJob(); as job) {
+  <div class="modal-backdrop" (click)="closeJobDetails()">
+    <div class="modal-dialog glass-card-dark animate-fade-in-up" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeJobDetails()">&times;</button>
+      <div class="modal-header">
+        <span class="badge"><i class="fa-solid fa-briefcase"></i> Stellenangebot</span>
+        <h2>{{ job.title }}</h2>
+        <div class="modal-job-meta">
+          <span><i class="fa-solid fa-location-dot"></i> {{ job.location }}</span>
+          <span><i class="fa-solid fa-clock"></i> {{ job.type }}</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <h4>Stellenbeschreibung:</h4>
+        <p>{{ job.desc }}</p>
+        
+        <h4>Was Sie auszeichnet:</h4>
+        <ul class="job-bullets">
+          <li><i class="fa-solid fa-circle-notch"></i> Abgeschlossene Ausbildung im Versicherungswesen oder vergleichbare Qualifikation</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Bezug zur Landwirtschaft / Affinit├ñt zu Agrarthemen von Vorteil</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Selbstst├ñndige, strukturierte und kundenorientierte Arbeitsweise</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Teamgeist, Zuverl├ñssigkeit und Kommunikationsst├ñrke</li>
+        </ul>
+
+        <h4>Was wir bieten:</h4>
+        <ul class="job-bullets">
+          <li><i class="fa-solid fa-circle-notch"></i> Einen krisensicheren Arbeitsplatz in einem kollegialen Team</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Flexible Arbeitszeiten & Homeoffice-M├Âglichkeiten</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Attraktive Verg├╝tung sowie betriebliche Altersvorsorge</li>
+          <li><i class="fa-solid fa-circle-notch"></i> Individuelle Weiterbildungsm├Âglichkeiten</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="mailto:info@mrvv-deutschland.de?subject=Bewerbung: {{ job.title }}" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Jetzt direkt bewerben</a>
+        <button class="btn btn-outline" (click)="closeJobDetails()" style="color:#fff; border-color: rgba(255,255,255,0.3)">Schlie├ƒen</button>
+      </div>
+    </div>
+  </div>
+}
+

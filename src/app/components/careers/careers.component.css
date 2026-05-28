@@ -1,0 +1,198 @@
+/* --- CAREERS SECTION --- */
+.career-section {
+  background-color: white;
+}
+
+.job-card {
+  background-color: var(--bg-light);
+  padding: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.job-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.job-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.job-action-btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.job-card:hover .job-action-btn {
+  color: var(--accent);
+}
+
+/* Custom Interactive Panel banner */
+.career-graphic-panel {
+  position: relative;
+  margin-top: 60px;
+  padding: 60px 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-align: center;
+  background-image: url('/family_farm.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.career-graphic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(9, 33, 21, 0.9) 0%, rgba(15, 52, 33, 0.8) 100%);
+  z-index: 1;
+}
+
+.career-graphic-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.career-graphic-content h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.career-graphic-content p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 30px;
+}
+
+
+/* --- JOB MODAL DIALOG --- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(9, 33, 21, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-dialog {
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  position: relative;
+  border: 1px solid rgba(106, 176, 35, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.modal-job-meta {
+  display: flex;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-body h4 {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.modal-body p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.job-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-bullets li {
+  display: flex;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.job-bullets i {
+  color: var(--accent);
+  margin-top: 5px;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+

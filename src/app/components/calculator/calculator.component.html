@@ -1,0 +1,225 @@
+<!-- Interactive "Betriebscheck" Section (Quiz/Calculator) -->
+<section id="quiz" class="section-padding quiz-section gradient-bg">
+  <div class="container">
+    <div class="section-header text-center light-theme">
+      <span class="badge" style="background-color: rgba(106,176,35,0.25); color: #fff; border-color: rgba(255,255,255,0.2)">Risiko-Check</span>
+      <h2 style="color: #fff;">Der digitale MRVV Betriebscheck</h2>
+      <p class="section-desc" style="color: #cbd5e1;">
+        Ermitteln Sie in nur 3 Schritten Ihren individuellen Versicherungsbedarf. Erhalten Sie eine ma├ƒgeschneiderte Sofortanalyse f├╝r Ihren landwirtschaftlichen Betrieb.
+      </p>
+    </div>
+
+    <!-- Multi-step Quiz Card -->
+    <div class="glass-card-dark quiz-card-container">
+      <!-- Progress Bar Indicator -->
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress" [style.width.%]="(quizStep() / 4) * 100"></div>
+        <div class="steps-numbers">
+          <span [ngClass]="{'active': quizStep() >= 1}">1. Betriebsprofil</span>
+          <span [ngClass]="{'active': quizStep() >= 2}">2. Betriebsmittel</span>
+          <span [ngClass]="{'active': quizStep() >= 3}">3. Kontakt</span>
+          <span [ngClass]="{'active': quizStep() >= 4}">4. Ergebnis</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Farm Type and Hectares -->
+      @if (quizStep() === 1) {
+        <div class="step-layout animate-fade-in-up">
+          <h3>Schritt 1: Welches Betriebsprofil trifft auf Sie zu?</h3>
+          
+          <div class="farm-type-grid">
+            <button class="farm-type-btn" [ngClass]="{'selected': farmType() === 'Ackerbau'}" (click)="farmType.set('Ackerbau')">
+              <i class="fa-solid fa-wheat-awn"></i>
+              <span>Ackerbau</span>
+            </button>
+            <button class="farm-type-btn" [ngClass]="{'selected': farmType() === 'Tierhaltung'}" (click)="farmType.set('Tierhaltung')">
+              <i class="fa-solid fa-cow"></i>
+              <span>Tierhaltung / Milch</span>
+            </button>
+            <button class="farm-type-btn" [ngClass]="{'selected': farmType() === 'Weinbau'}" (click)="farmType.set('Weinbau')">
+              <i class="fa-solid fa-apple-whole"></i>
+              <span>Wein- & Obstbau</span>
+            </button>
+            <button class="farm-type-btn" [ngClass]="{'selected': farmType() === 'Mischbetrieb'}" (click)="farmType.set('Mischbetrieb')">
+              <i class="fa-solid fa-house-chimney-window"></i>
+              <span>Mischbetrieb</span>
+            </button>
+          </div>
+
+          <div class="range-slider-wrap">
+            <label>Bewirtschaftete Fl├ñche: <strong>{{ farmSize() }} Hektar (ha)</strong></label>
+            <input type="range" min="1" max="1000" [value]="farmSize()" (input)="farmSize.set(+$any($event.target).value)" class="quiz-range-slider">
+            <div class="range-labels">
+              <span>1 ha</span>
+              <span>250 ha</span>
+              <span>500 ha</span>
+              <span>750 ha</span>
+              <span>1000+ ha</span>
+            </div>
+          </div>
+
+          <div class="quiz-footer-actions">
+            <div></div>
+            <button class="btn btn-primary" (click)="nextQuizStep()">
+              Weiter <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      }
+
+      <!-- Step 2: Asset Toggles -->
+      @if (quizStep() === 2) {
+        <div class="step-layout animate-fade-in-up">
+          <h3>Schritt 2: Ausstattung & Personal</h3>
+          <p class="step-desc">Bitte w├ñhlen Sie aus, welche Ausstattung und Personalstrukturen auf Ihrem Betrieb vorhanden sind:</p>
+
+          <div class="toggles-list">
+            <!-- Toggle Item 1 -->
+            <div class="toggle-card" [ngClass]="{'active': hasMachinery()}" (click)="hasMachinery.set(!hasMachinery())">
+              <div class="toggle-info">
+                <i class="fa-solid fa-tractor"></i>
+                <div>
+                  <h4>Eigener/Geleaster Maschinenpark</h4>
+                  <p>Traktoren, M├ñhdrescher, Pfl├╝ge, H├ñnger vorhanden</p>
+                </div>
+              </div>
+              <div class="toggle-switch">
+                <span class="switch-bullet"></span>
+              </div>
+            </div>
+
+            <!-- Toggle Item 2 -->
+            <div class="toggle-card" [ngClass]="{'active': hasSolar()}" (click)="hasSolar.set(!hasSolar())">
+              <div class="toggle-info">
+                <i class="fa-solid fa-solar-panel"></i>
+                <div>
+                  <h4>Photovoltaikanlage</h4>
+                  <p>Solar-Anlage auf D├ñchern von St├ñllen/Hallen</p>
+                </div>
+              </div>
+              <div class="toggle-switch">
+                <span class="switch-bullet"></span>
+              </div>
+            </div>
+
+            <!-- Toggle Item 3 -->
+            <div class="toggle-card" [ngClass]="{'active': hasEmployees()}" (click)="hasEmployees.set(!hasEmployees())">
+              <div class="toggle-info">
+                <i class="fa-solid fa-user-tie"></i>
+                <div>
+                  <h4>Festangestellte Mitarbeiter</h4>
+                  <p>Ganzj├ñhrig besch├ñftigte Arbeitnehmer</p>
+                </div>
+              </div>
+              <div class="toggle-switch">
+                <span class="switch-bullet"></span>
+              </div>
+            </div>
+
+            <!-- Toggle Item 4 -->
+            <div class="toggle-card" [ngClass]="{'active': hasSeasonal()}" (click)="hasSeasonal.set(!hasSeasonal())">
+              <div class="toggle-info">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                  <h4>Saisonale Erntehelfer</h4>
+                  <p>Erntekr├ñfte aus dem Ausland (z.B. Erntehelfer)</p>
+                </div>
+              </div>
+              <div class="toggle-switch">
+                <span class="switch-bullet"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-footer-actions">
+            <button class="btn btn-outline" (click)="prevQuizStep()" style="border-color: rgba(255,255,255,0.4); color:#fff;">
+              <i class="fa-solid fa-arrow-left"></i> Zur├╝ck
+            </button>
+            <button class="btn btn-primary" (click)="nextQuizStep()">
+              Weiter <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      }
+
+      <!-- Step 3: Callback/Contact info -->
+      @if (quizStep() === 3) {
+        <div class="step-layout animate-fade-in-up">
+          <h3>Schritt 3: Wohin d├╝rfen wir Ihre Kurzanalyse senden?</h3>
+          <p class="step-desc">Geben Sie kurz Ihre Kontaktdaten ein, um direkt zu Ihrem individuellen Ergebnis zu gelangen.</p>
+          
+          <div class="quiz-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label>Ihr Name</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" [(ngModel)]="contactName" placeholder="Z. B. Georg Meier">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>E-Mail-Adresse</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" [(ngModel)]="contactEmail" placeholder="Z. B. g.meier@landwirt.de">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-footer-actions">
+            <button class="btn btn-outline" (click)="prevQuizStep()" style="border-color: rgba(255,255,255,0.4); color:#fff;">
+              <i class="fa-solid fa-arrow-left"></i> Zur├╝ck
+            </button>
+            <button class="btn btn-primary" (click)="nextQuizStep()" [disabled]="!contactName() || !contactEmail()">
+              Ergebnis berechnen <i class="fa-solid fa-chart-line"></i>
+            </button>
+          </div>
+        </div>
+      }
+
+      <!-- Step 4: Results Dashboard Recommendation -->
+      @if (quizStep() === 4) {
+        <div class="step-layout animate-fade-in-up results-step">
+          <div class="results-header">
+            <div class="success-icon-badge"><i class="fa-solid fa-square-poll-vertical"></i></div>
+            <h3>Ihre pers├Ânliche Risikoanalyse</h3>
+            <p>Sehr geehrte/r {{ contactName() }}, basierend auf Ihren Angaben ({{ farmSize() }} ha {{ farmType() }}) haben unsere Spezialisten folgende Absicherungsempfehlung berechnet:</p>
+          </div>
+
+          <div class="recommendations-list">
+            @for (rec of quizResults(); track rec.title) {
+              <div class="rec-card" [ngClass]="rec.level.toLowerCase()">
+                <div class="rec-icon-box">
+                  <i class="fa-solid" [ngClass]="rec.icon"></i>
+                </div>
+                <div class="rec-content">
+                  <div class="rec-title-row">
+                    <h4>{{ rec.title }}</h4>
+                    <span class="rec-badge">{{ rec.level }}</span>
+                  </div>
+                  <p>{{ rec.desc }}</p>
+                </div>
+              </div>
+            }
+          </div>
+
+          <div class="results-action-box">
+            <h4>Bedarfscheck per E-Mail erhalten?</h4>
+            <p>Wir haben eine detaillierte Zusammenfassung inklusive konkreter Beispiellayouts und Tarifs├ñtze an <strong>{{ contactEmail() }}</strong> gesendet.</p>
+            
+            <div class="results-buttons">
+              <button class="btn btn-primary" (click)="resetQuiz()">
+                <i class="fa-solid fa-rotate-left"></i> Neuen Check machen
+              </button>
+              <a href="#contact" class="btn btn-secondary" (click)="setContactTopic('Betriebscheck Beratung')">
+                <i class="fa-solid fa-calendar-days"></i> Kostenlose Beratung buchen
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+

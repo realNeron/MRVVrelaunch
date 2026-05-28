@@ -1,0 +1,189 @@
+/* 
+  =========================================
+  MRVV DEUTSCHLAND REDESIGN - APP COMPONENT STYLES
+  =========================================
+*/
+
+/* --- HEADER & NAVIGATION --- */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 52, 33, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(106, 176, 35, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo-svg {
+  height: 60px;
+  width: auto;
+  color: #ffffff; /* Sets the text paths & divider line to white */
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.brand-logo-svg:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.logo-area.light .brand-logo-svg {
+  height: 52px;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link-cta {
+  background-color: rgba(106, 176, 35, 0.2);
+  color: var(--accent);
+  border: 1px solid rgba(106, 176, 35, 0.3);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nav-link-cta:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.phone-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.phone-badge:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: var(--bg-dark);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-drawer a {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 12px;
+}
+
+.mobile-nav-drawer .mob-quiz-btn {
+  color: var(--accent);
+  border-bottom-color: rgba(106, 176, 35, 0.2);
+}
+
+.mob-footer {
+  margin-top: auto;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.mob-footer a {
+  font-size: 1rem;
+  color: white;
+  margin-top: 8px;
+  border: none;
+}
+
+@media (max-width: 992px) {
+  .desktop-nav { display: none; }
+  .phone-badge { display: none; }
+  .menu-btn { display: block; }
+}
+
+

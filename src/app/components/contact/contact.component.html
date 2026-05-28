@@ -1,0 +1,125 @@
+<!-- Contact & Callback Request Section -->
+<section id="contact" class="section-padding contact-section">
+  <div class="container">
+    <div class="grid-2 contact-grid">
+      <!-- Contact Info Side -->
+      <div class="contact-info-side">
+        <span class="badge">Kontakt aufnehmen</span>
+        <h2>Wir freuen uns auf das Gespr├ñch mit Ihnen</h2>
+        <p class="contact-desc-para">
+          Haben Sie Fragen zu unseren Agrarversicherungen, m├Âchten Sie einen Schaden melden oder eine pers├Ânliche Beratung vereinbaren? Schreiben Sie uns oder rufen Sie uns direkt an!
+        </p>
+
+        <div class="contact-methods">
+          <div class="method-card glass-card">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Telefonische Beratung</h4>
+              <p>Zentrale Wismar:</p>
+              <a href="tel:03841468570">03841-468570</a>
+            </div>
+          </div>
+
+          <div class="method-card glass-card">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>E-Mail-Kontakt</h4>
+              <p>F├╝r allgemeine Anfragen:</p>
+              <a href="mailto:info@mrvv-deutschland.de">info@mrvv-deutschland.de</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges & Quality Certificates -->
+        <div class="certificates-wrapper">
+          <div class="cert-item">
+            <i class="fa-solid fa-award"></i>
+            <div>
+              <h5>IHK Ausgezeichnet</h5>
+              <p>Qualit├ñt durch qualifizierte Ausbildung</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <i class="fa-solid fa-gavel"></i>
+            <div>
+              <h5>Haftungssicherheit</h5>
+              <p>Kanzlei Michaelis gepr├╝ftes Siegel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form Side -->
+      <div class="contact-form-side">
+        <div class="glass-card contact-form-card">
+          @if (!formSubmitted()) {
+            <h3>Nachricht oder R├╝ckrufwunsch senden</h3>
+            <form (submit)="submitContactForm($event)">
+              <div class="form-group">
+                <label for="name">Ihr Name *</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" id="name" [(ngModel)]="contactName" name="contactName" required placeholder="Vor- und Nachname">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-Mail-Adresse *</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" id="email" [(ngModel)]="contactEmail" name="contactEmail" required placeholder="name@beispiel.de">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefonnummer (f├╝r R├╝ckruf)</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-phone"></i>
+                  <input type="tel" id="phone" [(ngModel)]="contactPhone" name="contactPhone" placeholder="Z. B. +49 170 1234567">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="topic">Betreff / Thema</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-circle-question"></i>
+                  <select id="topic" [(ngModel)]="contactTopic" name="contactTopic">
+                    <option value="allgemein">Allgemeine Anfrage</option>
+                    <option value="Betriebscheck Beratung">Beratung zum Betriebscheck</option>
+                    <option value="Erntehelfer">Erntehelfer-Versicherung</option>
+                    <option value="Schadenmeldung">Schaden melden</option>
+                    <option value="Wismar">Gesch├ñftsstelle Wismar</option>
+                    <option value="Nienborstel">Gesch├ñftsstelle Nienborstel</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Ihre Nachricht</label>
+                <div class="input-wrap">
+                  <textarea id="message" rows="4" [(ngModel)]="contactMessage" name="contactMessage" placeholder="Wie k├Ânnen wir Ihnen helfen?"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="!contactName() || !contactEmail()">
+                <i class="fa-solid fa-paper-plane"></i> Nachricht absenden
+              </button>
+            </form>
+          } @else {
+            <div class="success-submission animate-fade-in-up">
+              <div class="success-checkbox">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h3>Vielen Dank f├╝r Ihre Anfrage!</h3>
+              <p>Sehr geehrte/r <strong>{{ contactName() }}</strong>,</p>
+              <p>Ihre Nachricht zum Thema <strong>{{ contactTopic }}</strong> wurde erfolgreich an unser Beratungsteam übermittelt.</p>
+              <p>Wir werden uns innerhalb der n├ñchsten 24 Stunden pers├Ânlich bei Ihnen unter der E-Mail <strong>{{ contactEmail() }}</strong> melden.</p>
+              <div class="success-loader"></div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

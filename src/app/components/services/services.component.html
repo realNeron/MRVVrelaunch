@@ -1,0 +1,160 @@
+<!-- Interactive Services & Sparte Section -->
+<section id="services" class="section-padding services-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="badge">Leistungsportfolio</span>
+      <h2>Maßgeschneiderte Versicherungskonzepte</h2>
+      <p class="section-desc">
+        Wählen Sie Ihren Bereich aus und entdecken Sie unsere speziell für landwirtschaftliche Betriebe und Familien optimierten Versicherungslösungen.
+      </p>
+    </div>
+
+    <!-- Tabs Toggle Nav -->
+    <div class="tab-navigation">
+      <button [ngClass]="{'active': activeTab() === 'landwirtschaft'}" (click)="activeTab.set('landwirtschaft')">
+        <i class="fa-solid fa-wheat-awn"></i> Landwirtschaft
+      </button>
+      <button [ngClass]="{'active': activeTab() === 'erntehelfer'}" (click)="activeTab.set('erntehelfer')">
+        <i class="fa-solid fa-users"></i> Erntehelfer (AgrarOptimal)
+      </button>
+      <button [ngClass]="{'active': activeTab() === 'reise'}" (click)="activeTab.set('reise')">
+        <i class="fa-solid fa-umbrella-beach"></i> Reise (TravelSecure)
+      </button>
+      <button [ngClass]="{'active': activeTab() === 'familie'}" (click)="activeTab.set('familie')">
+        <i class="fa-solid fa-house-chimney-user"></i> Familie & Vorsorge
+      </button>
+    </div>
+
+    <!-- Tab Content Renderers -->
+    @if (activeTab() === 'landwirtschaft') {
+      <div class="grid-3 tab-content">
+        <!-- Service Card 1 -->
+        <div class="glass-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Agrar-Betriebshaftpflicht</h3>
+          <p>Schutz bei Personen-, Sach- und Vermögensschäden, inklusive Produkthaftung für Ihre erzeugten landwirtschaftlichen Güter.</p>
+          <ul class="service-bullets">
+            <li><i class="fa-solid fa-check"></i> Inklusive Umwelthaftpflicht</li>
+            <li><i class="fa-solid fa-check"></i> Schutz bei Pensionstierhaltung</li>
+            <li><i class="fa-solid fa-check"></i> Spezialdeckung für Direktvermarktung</li>
+          </ul>
+          <a href="#contact" class="service-link">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        
+        <!-- Service Card 2 -->
+        <div class="glass-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-tractor"></i></div>
+          <h3>Maschinen- & Fuhrpark</h3>
+          <p>Exklusive Maschinenring-Tarife zur Kasko- und Haftpflichtabsicherung all Ihrer Traktoren, Erntemaschinen und Arbeitsgeräte.</p>
+          <ul class="service-bullets">
+            <li><i class="fa-solid fa-check"></i> Maschinen-Kasko mit Neuwertentschädigung</li>
+            <li><i class="fa-solid fa-check"></i> Absicherung bei Fehlbedienung</li>
+            <li><i class="fa-solid fa-check"></i> Günstige Flottentarife</li>
+          </ul>
+          <a href="#contact" class="service-link">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="glass-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
+          <h3>Gebäude & Photovoltaik</h3>
+          <p>Ganzheitlicher Schutz für Wirtschaftsgebäude, Stallungen und Ihre Solaranlage gegen Brand, Sturm, Schneedruck und Ertragsausfall.</p>
+          <ul class="service-bullets">
+            <li><i class="fa-solid fa-check"></i> Allgefahrendeckung für PV-Anlagen</li>
+            <li><i class="fa-solid fa-check"></i> Ertragsausfall-Entschädigung</li>
+            <li><i class="fa-solid fa-check"></i> Absicherung bei Tierverlusten durch Lüftungsausfall</li>
+          </ul>
+          <a href="#contact" class="service-link">Mehr erfahren <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    }
+
+    @if (activeTab() === 'erntehelfer') {
+      <div class="grid-2 tab-content align-center">
+        <div class="tab-image-side">
+          <img src="family_farm.png" alt="Saisonale Erntehelfer" class="rounded-image-card">
+        </div>
+        <div class="tab-text-side">
+          <div class="badge">AgrarOptimal Konzept</div>
+          <h3>Sorglose Erntezeit mit AgrarOptimal</h3>
+          <p class="tab-para">
+            Landwirtschaftliche Betriebe stellen in der Erntezeit hohe Anforderungen an ausländische Arbeitskräfte. Mit unserer Erntehelfer-Versicherung **AgrarOptimal** sichern Sie Saisonkräfte perfekt ab.
+          </p>
+          <div class="features-list">
+            <div class="feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong>Lückenlose Krankenversicherung:</strong>
+                <span>Deckt ambulante, stationäre Behandlungen sowie Zahnarztkosten ab.</span>
+              </div>
+            </div>
+            <div class="feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong>Haftpflicht & Unfallschutz:</strong>
+                <span>Absicherung bei Schäden während der Arbeitszeit und in der Freizeit.</span>
+              </div>
+            </div>
+            <div class="feat-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong>Einfache Online-Meldung:</strong>
+                <span>Personenbezogene An- und Abmeldung sekundenschnell über unser Portal.</span>
+              </div>
+            </div>
+          </div>
+          <a href="#quiz" class="btn btn-primary">Betriebscheck machen</a>
+        </div>
+      </div>
+    }
+
+    @if (activeTab() === 'reise') {
+      <div class="grid-2 tab-content align-center">
+        <div class="tab-text-side">
+          <div class="badge">Kooperation TravelSecure</div>
+          <h3>Reiseversicherung TravelSecure</h3>
+          <p class="tab-para">
+            Als offizieller Partner bieten wir Ihnen die vielfach ausgezeichnete Reiseversicherung **TravelSecure** der Würzburger Versicherungs-AG an. Buchen Sie Ihren Reiseschutz unkompliziert online.
+          </p>
+          <ul class="travel-bullets">
+            <li><i class="fa-solid fa-shield"></i> <strong>Reiserücktrittskosten-Versicherung:</strong> Schutz vor Stornogebühren vor Antritt der Reise.</li>
+            <li><i class="fa-solid fa-briefcase-medical"></i> <strong>Auslandsreise-Krankenversicherung:</strong> Optimaler Schutz weltweit inklusive medizinisch sinnvollem Rücktransport.</li>
+            <li><i class="fa-solid fa-award"></i> <strong>Testsieger-Qualität:</strong> Regelmäßig Bestnoten bei Stiftung Warentest.</li>
+          </ul>
+          <div class="action-row">
+            <a href="https://www.travelsecure.de/" target="_blank" class="btn btn-secondary">Direkt Online abschließen <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="tab-image-side">
+          <img src="travel_secure.png" alt="Reisen mit Schutz" class="rounded-image-card">
+        </div>
+      </div>
+    }
+
+    @if (activeTab() === 'familie') {
+      <div class="grid-3 tab-content">
+        <div class="glass-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>Landwirtschaftliche Unfall</h3>
+          <p>Unfallschutz für Sie, Ihren Ehepartner und mithelfende Familienangehörige – rund um die Uhr auf dem Hof sowie im Privatleben.</p>
+          <a href="#contact" class="service-link">Angebot anfordern <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-vault"></i></div>
+          <h3>Altersvorsorge & Leben</h3>
+          <p>Konzepte zur Hofübergabe, Risikolebensversicherung und privaten Rentenvorsorge, abgestimmt auf agrarische Strukturen.</p>
+          <a href="#contact" class="service-link">Beratung anfordern <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+          <h3>Vorsorgedatenbank</h3>
+          <p>Patientenverfügung und Vorsorgevollmachten rechtssicher erstellen und digital hinterlegen über unsere Partner-Plattform.</p>
+          <a href="https://vorsorgen.digital/b/mrvv-lpv" target="_blank" class="service-link">Jetzt vorsorgen <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+

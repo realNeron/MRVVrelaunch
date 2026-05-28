@@ -1,0 +1,16 @@
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-services',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './services.component.html',
+  styleUrl: './services.component.css'
+})
+export class ServicesComponent {
+  // Tabs active state signal
+  protected readonly activeTab = signal<string>('landwirtschaft');
+
+  constructor() {}
+}
