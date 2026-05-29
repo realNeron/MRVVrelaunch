@@ -2,7 +2,6 @@
 .hero-section {
   position: relative;
   padding: 180px 0 140px 0;
-  background-image: url('/hero_background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
