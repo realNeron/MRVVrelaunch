@@ -25,7 +25,9 @@
               (click)="selectOffice(office)"
               [title]="office.city"
             >
-              <span class="pin-ring"></span>
+              @if (selectedOffice()?.city === office.city) {
+                <span class="pin-ring"></span>
+              }
               <span class="pin-dot"></span>
             </button>
           }
