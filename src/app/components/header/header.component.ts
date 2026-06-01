@@ -19,4 +19,12 @@ export class HeaderComponent {
   protected closeMobileMenu(): void {
     this.isMobileMenuOpen.set(false);
   }
+
+  protected scrollToTop(event: Event): void {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }
