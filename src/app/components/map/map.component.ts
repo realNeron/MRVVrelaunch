@@ -45,6 +45,15 @@ export class MapComponent {
       desc: 'Unser agrarischer Beratungsschwerpunkt in Schleswig-Holstein.'
     },
     {
+      name: 'MRVV GmbH & Co. KG Nortmoor',
+      city: 'Nortmoor',
+      address: 'Gewerbestr. 2, 26845 Nortmoor',
+      phone: '04950-9955869',
+      email: 'nortmoor@mrvv-deutschland.de',
+      top: 26, left: 18,
+      desc: 'Unsere Geschäftsstelle in Ostfriesland – verlässlicher Partner für landwirtschaftliche Betriebe und Maschinenringe im Nordwesten.'
+    },
+    {
       name: 'MRVV Rheinland-Pfalz/Saarland GmbH & Co. KG',
       city: 'Alzey',
       address: 'Otto-Lilienthal-Str. 4, 55232 Alzey',
