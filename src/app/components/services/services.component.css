@@ -3,20 +3,7 @@
   background-color: #f7f9f6;
 }
 
-.section-header {
-  max-width: 650px;
-  margin: 0 auto 50px auto;
-}
-
-.section-header h2 {
-  font-size: 2.2rem;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.section-desc {
-  color: var(--text-muted);
-}
+/* Section header styles are now globally unified in styles.css */
 
 /* Tabs Toggle Navigation */
 .tab-navigation {
