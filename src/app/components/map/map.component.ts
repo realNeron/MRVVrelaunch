@@ -54,6 +54,15 @@ export class MapComponent {
       desc: 'Unsere Geschäftsstelle in Ostfriesland – verlässlicher Partner für landwirtschaftliche Betriebe und Maschinenringe im Nordwesten.'
     },
     {
+      name: 'MRVV GmbH & Co. KG Wismar',
+      city: 'Wiesmoor',
+      address: 'Gewerbestr. 2, 26845 Nortmoor',
+      phone: '04950-9955879',
+      email: 'wiesmoor@mrvv-deutschland.de',
+      top: 24, left: 19,
+      desc: 'Unsere Außenstelle Wiesmoor – kompetente Absicherung und unabhängige Beratung für den Maschinenring Nordwest.'
+    },
+    {
       name: 'MRVV Rheinland-Pfalz/Saarland GmbH & Co. KG',
       city: 'Alzey',
       address: 'Otto-Lilienthal-Str. 4, 55232 Alzey',
