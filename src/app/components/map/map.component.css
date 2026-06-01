@@ -43,13 +43,24 @@
 /* Pulsing pins */
 .map-pin-btn {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  cursor: pointer;
 }
+
+.map-pin-btn:hover {
+  z-index: 50; /* Bring hovered pin to the front so it can be clicked easily */
+}
+
+.map-pin-btn.active {
+  z-index: 20; /* Keep active pin slightly raised, but lower than hovered */
+}
+
 
 .pin-ring {
   position: absolute;

@@ -50,16 +50,16 @@ export class MapComponent {
       address: 'Gewerbestr. 2, 26845 Nortmoor',
       phone: '04950-9955869',
       email: 'nortmoor@mrvv-deutschland.de',
-      top: 26, left: 18,
+      top: 27, left: 17,
       desc: 'Unsere Geschäftsstelle in Ostfriesland – verlässlicher Partner für landwirtschaftliche Betriebe und Maschinenringe im Nordwesten.'
     },
     {
       name: 'MRVV GmbH & Co. KG Wismar',
       city: 'Wiesmoor',
-      address: 'Gewerbestr. 2, 26845 Nortmoor',
+      address: 'Oldenburger Str. 36, 26639 Wiesmoor',
       phone: '04950-9955879',
       email: 'wiesmoor@mrvv-deutschland.de',
-      top: 24, left: 19,
+      top: 22, left: 20,
       desc: 'Unsere Außenstelle Wiesmoor – kompetente Absicherung und unabhängige Beratung für den Maschinenring Nordwest.'
     },
     {
