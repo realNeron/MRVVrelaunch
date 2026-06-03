@@ -78,6 +78,46 @@
         }
       </div>
     </div>
+
+    <!-- Team / Representatives Section -->
+    @if (selectedOffice(); as office) {
+      @if (getRepresentatives(office.city).length > 0) {
+        <div class="team-section animate-fade-in-up">
+          <div class="team-header text-center">
+            <h3>Ihre Ansprechpartner für {{ office.city }}</h3>
+            <p>Persönliche Beratung und Betreuung direkt vor Ort</p>
+          </div>
+          
+          <div class="team-grid">
+            @for (person of getRepresentatives(office.city); track person.name) {
+              <div class="team-card glass-card">
+                <div class="team-photo-wrap">
+                  <img [src]="person.photo" [alt]="person.name" class="team-photo">
+                </div>
+                <div class="team-info">
+                  <h4>{{ person.name }}</h4>
+                  <span class="team-role">{{ person.role }}</span>
+                  
+                  <div class="team-contacts">
+                    <a href="tel:{{ person.phone.replace(' ', '').replace('-', '') }}" class="team-contact-link">
+                      <i class="fa-solid fa-phone"></i> {{ person.phone }}
+                    </a>
+                    @if (person.mobile) {
+                      <a href="tel:{{ person.mobile.replace(' ', '').replace('-', '') }}" class="team-contact-link">
+                        <i class="fa-solid fa-mobile-screen-button"></i> {{ person.mobile }}
+                      </a>
+                    }
+                    <a href="mailto:{{ person.email }}" class="team-contact-link">
+                      <i class="fa-solid fa-envelope"></i> E-Mail schreiben
+                    </a>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    }
   </div>
 </section>
 
