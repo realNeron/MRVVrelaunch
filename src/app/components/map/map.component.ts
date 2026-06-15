@@ -52,7 +52,7 @@ export class MapComponent {
       phone: '04875-269940',
       email: 'info@mrvv-deutschland.de',
       top: 15, left: 38,
-      desc: 'Unser agrarischer Beratungsschwerpunkt in Schleswig-Holstein.'
+      desc: 'Unser Beratungsschwerpunkt für Landwirtschaft in Schleswig-Holstein.'
     },
     {
       name: 'MRVV GmbH & Co. KG Nortmoor',
