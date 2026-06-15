@@ -70,7 +70,7 @@ export class MapComponent {
       phone: '04950-9955879',
       email: 'wiesmoor@mrvv-deutschland.de',
       top: 22, left: 20,
-      desc: 'Unsere Außenstelle Wiesmoor – kompetente Absicherung und unabhängige Beratung für den Maschinenring Nordwest.'
+      desc: 'Unsere Außenstelle Wiesmoor – kompetente Absicherung und neutrale Beratung für den Maschinenring Nordwest.'
     },
     {
       name: 'MRVV Rheinland-Pfalz/Saarland GmbH & Co. KG',
